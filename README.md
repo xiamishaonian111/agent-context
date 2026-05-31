@@ -8,6 +8,7 @@ This repo provides:
 - `AGENTS.template.md`: a small default template for new projects.
 - `adaptation-checklist.md`: checks to run before committing an agent context file.
 - `examples/`: project-type-specific examples to copy and trim.
+- `skills/project-agent-context/`: Codex skill source for applying this repo to new projects.
 
 ## Recommended Use
 

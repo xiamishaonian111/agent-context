@@ -80,6 +80,17 @@ When asking the user, keep the interaction short and decision-oriented:
 If the UI tool automatically adds a free-form `Other` option, still phrase the
 question so the user knows custom feedback is welcome.
 
+Example question:
+
+```text
+Where should this skill live?
+
+1. Public source repo `agent-context/skills/<name>/` (Recommended): reusable, publishable, and reviewable.
+2. Codex runtime `~/.codex/skills/<name>/`: immediately active on this machine, but easy to drift from source.
+3. Project-local `skills/<name>/`: scoped to one repo and not global by default.
+4. Other / I will describe it.
+```
+
 ## Authoring Guidance
 
 - Optimize for result certainty, not process certainty.

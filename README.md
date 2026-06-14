@@ -9,6 +9,7 @@ This repo provides:
 - `adaptation-checklist.md`: checks to run before committing an agent context file.
 - `examples/`: project-type-specific examples to copy and trim.
 - `skills/project-agent-context/`: Codex skill source for applying this repo to new projects.
+- `skills/write-new-skill/`: Codex meta skill for writing outcome-oriented, interactive skills.
 
 ## Recommended Use
 

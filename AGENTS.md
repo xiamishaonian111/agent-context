@@ -10,6 +10,7 @@ Main artifacts:
 - `AGENTS.template.md`: default starting template.
 - `adaptation-checklist.md`: checklist before committing adapted context files.
 - `examples/`: project-type-specific examples.
+- `skills/`: reusable Codex skill sources, including `project-agent-context` and `write-new-skill`.
 
 ## Validate
 

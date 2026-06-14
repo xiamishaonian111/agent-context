@@ -105,6 +105,9 @@ Where should this skill live?
 - Do not invent speculative pitfalls just to fill a section.
 - Preserve raw error details in troubleshooting guidance.
 - Prefer updating an existing skill over creating a near-duplicate.
+- Do not create a new skill when the need is one-off, too project-specific,
+  better handled by `AGENTS.md`, a normal doc, or a script, or already covered by
+  an existing skill that can be tightened.
 
 ## Suggested Structure
 
@@ -118,6 +121,43 @@ Use the lightest structure that still makes the skill executable:
 - Links to deeper references or examples when they materially improve execution.
 
 Exact headings can vary. The contract matters more than the section order.
+
+Minimal skeleton:
+
+```markdown
+---
+name: skill-name
+description: Use this skill when...
+---
+
+# Skill Name
+
+Use this skill when...
+
+## Goal
+
+One sentence describing the finished capability or outcome.
+
+## Inputs
+
+What the user may provide, what the agent should infer, and what requires user confirmation.
+
+## Instructions
+
+Outcome-oriented guidance, constraints, and only the sequencing that materially affects success.
+
+## Boundaries
+
+What this skill does not do, what tools or data are allowed, and what requires approval.
+
+## Acceptance Criteria
+
+Concrete checks an unfamiliar agent can use to decide whether the task is complete.
+
+## Output
+
+Artifact format, destination, schema, or final response requirements.
+```
 
 ## Placement And Discovery
 

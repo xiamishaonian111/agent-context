@@ -134,6 +134,25 @@ Common placements:
 - `~/App/agent-skills/<package>/<name>/SKILL.md` only when that source tree
   exists in the current environment.
 
+## Source Of Truth And Sync
+
+When both a versioned source tree and a runtime skill directory exist, treat the
+versioned source tree as the source of truth. Edit source first, then sync the
+runtime copy, then verify the two files match before claiming the skill is
+installed or updated.
+
+For this workspace, the normal flow is:
+
+```text
+1. Edit `~/agent-context/skills/<name>/SKILL.md`.
+2. Copy it to `~/.codex/skills/<name>/SKILL.md` when the skill should be active locally.
+3. Run `diff -u ~/agent-context/skills/<name>/SKILL.md ~/.codex/skills/<name>/SKILL.md`.
+4. Commit and push the source repo after verification.
+```
+
+If the source tree and runtime copy disagree, do not silently pick one. Inspect
+the diff and preserve whichever side contains the intentional latest change.
+
 Update the relevant discovery surface when one exists, such as `README.md`, a
 skills index, marketplace manifest, or runtime skill list. Do not claim the
 skill is installed until the active registry or installer has been verified.
@@ -154,6 +173,8 @@ Before finishing, confirm that:
 - Terminology is consistent throughout.
 - Supporting docs are linked only when they materially improve execution.
 - The skill is discoverable from the active source tree or runtime registry.
+- If both source and runtime copies exist, they have been synced or the
+  intentional difference is explicitly documented.
 
 ## Additional Resources
 

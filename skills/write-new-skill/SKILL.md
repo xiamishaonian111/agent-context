@@ -185,17 +185,22 @@ For this workspace, the normal flow is:
 
 ```text
 1. Edit `~/agent-context/skills/<name>/SKILL.md`.
-2. Copy it to `~/.codex/skills/<name>/SKILL.md` when the skill should be active locally.
-3. Run `diff -u ~/agent-context/skills/<name>/SKILL.md ~/.codex/skills/<name>/SKILL.md`.
-4. Commit and push the source repo after verification.
+2. Update `~/agent-context/skills/INDEX.md` when the skill is added, renamed,
+   removed, or materially changed.
+3. Copy it to `~/.codex/skills/<name>/SKILL.md` when the skill should be active locally.
+4. Run `diff -u ~/agent-context/skills/<name>/SKILL.md ~/.codex/skills/<name>/SKILL.md`.
+5. Commit and push the source repo after verification.
 ```
 
 If the source tree and runtime copy disagree, do not silently pick one. Inspect
 the diff and preserve whichever side contains the intentional latest change.
 
-Update the relevant discovery surface when one exists, such as `README.md`, a
-skills index, marketplace manifest, or runtime skill list. Do not claim the
-skill is installed until the active registry or installer has been verified.
+Update the relevant discovery surface, such as `README.md`, a skills index,
+marketplace manifest, or runtime skill list. For skills owned by this repo,
+`~/agent-context/skills/INDEX.md` is mandatory unless the change is purely
+internal and does not affect discovery, triggering, placement, or usage
+guidance. Do not claim the skill is installed until the active registry or
+installer has been verified.
 
 ## Acceptance Criteria
 
@@ -212,6 +217,9 @@ Before finishing, confirm that:
 - Every referenced file or path exists.
 - Terminology is consistent throughout.
 - Supporting docs are linked only when they materially improve execution.
+- `~/agent-context/skills/INDEX.md` has been updated for any added, renamed,
+  removed, or materially changed source skill, or the final response explicitly
+  states why no index update was needed.
 - The skill is discoverable from the active source tree or runtime registry.
 - If both source and runtime copies exist, they have been synced or the
   intentional difference is explicitly documented.
